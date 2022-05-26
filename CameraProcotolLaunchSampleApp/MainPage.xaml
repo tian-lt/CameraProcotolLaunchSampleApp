@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="CameraProcotolLaunchSampleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Camera" Click="Button_Camera_Click_Async"/>
+            <Button Content="Camera capture UI" Click="Button_Camera_CaptureUI_Click_Async"/>
+            <Button Content="Camera capture UI (photo or video)" IsEnabled="False"/>
+            <Button Content="Camera picker (photo only)" Click="Button_Camera_Picker_Photo_Click_Async"/>
+            <Button Content="Camera picker (photo or video)" IsEnabled="False"/>
+        </StackPanel>
+        <Image Grid.Row="1" Source="{x:Bind PreviewImage, Mode=OneWay}"/>
+    </Grid>
+</Page>
